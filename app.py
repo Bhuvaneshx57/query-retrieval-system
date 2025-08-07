@@ -14,9 +14,13 @@ class RequestBody(BaseModel):
     documents: str
     questions: list[str]
 
+@app.get("/health")
+async def health():
+    return {"status": "healthy"}
+
 def process_with_ragflow(document_url: str, questions: list[str]) -> list[str]:
-    ragflow_url = "https://query-retrieval-system-4v1w.onrender.com"
-    payload = {	
+    ragflow_url = "https://ragflow-service.onrender.com/api/v1/process"
+    payload = {
         "document_url": document_url,
         "questions": questions,
         "embedding_model": "all-mpnet-base-v2",
