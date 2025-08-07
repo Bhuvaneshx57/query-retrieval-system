@@ -15,7 +15,7 @@ class RequestBody(BaseModel):
     questions: list[str]
 
 def process_with_ragflow(document_url: str, questions: list[str]) -> list[str]:
-    ragflow_url = "http://localhost:9380/api/v1/process"
+    ragflow_url = "https://query-retrieval-system-4v1w.onrender.com"
     payload = {	
         "document_url": document_url,
         "questions": questions,
