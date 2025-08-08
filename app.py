@@ -21,7 +21,7 @@ async def health():
     return {"status": "healthy"}
 
 def process_with_ragflow(document_url: str, questions: list[str]) -> list[str]:
-    ragflow_url = "https://ragflow-service.onrender.com/api/v1/process"
+    ragflow_url = "https://ragflow-service.up.railway.app/api/v1/process"
     payload = {
         "document_url": document_url,
         "questions": questions,
